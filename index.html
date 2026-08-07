@@ -7,95 +7,54 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="AI工作台">
-<meta name="theme-color" content="#5b8def">
+<meta name="theme-color" content="#c9c4b8">
 <title>AI工作台</title>
 <style>
 :root{
-  --bg:#f3f5fa;
-  --card:#ffffff;
-  --text:#1c2236;
-  --t2:#6a7290;
-  --t3:#a8aec4;
-  --line:#eef1f8;
-  /* 四大板块专属色，低饱和 */
-  --c-today:#5b8def;      /* 看板：雾蓝 */
-  --c-today-s:#e8f0ff;
-  --c-study:#7c6cf0;      /* 论文：雅紫 */
-  --c-study-s:#efecff;
-  --c-teach:#2bb6a3;      /* 备课：青绿 */
-  --c-teach-s:#e4f7f4;
-  --c-baby:#f0935a;       /* 育儿：暖橙 */
-  --c-baby-s:#fdf0e6;
-  --c-red:#f56b7d;
-  --c-red-s:#ffeef1;
-  --radius:18px;
-  --shadow:0 3px 16px rgba(40,55,110,.06);
-  --sb:env(safe-area-inset-bottom,0px);
-  --st:env(safe-area-inset-top,0px);
+  --bg1:#e8e4dc;--bg2:#dfd9d0;--card:#f4f1ea;--card-2:#efebe3;
+  --text:#4a4640;--t2:#7a736a;--t3:#a8a096;--line:#e2ddd3;
+  --c-today:#8a96a3;--c-today-s:#e4e7ea;
+  --c-study:#9a8fa8;--c-study-s:#e8e5ea;
+  --c-teach:#88a39a;--c-teach-s:#e3ebe8;
+  --c-baby:#c09a82;--c-baby-s:#efe4db;
+  --c-red:#b88a8a;--c-red-s:#efe0e0;
+  --radius:18px;--shadow:0 2px 10px rgba(80,70,60,.05);
+  --sb:env(safe-area-inset-bottom,0px);--st:env(safe-area-inset-top,0px);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overscroll-behavior-y:none}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans","Microsoft YaHei",sans-serif;
-  background:var(--bg);color:var(--text);font-size:15px;line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  padding-bottom:calc(72px + var(--sb));
-  overflow-x:hidden;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans",sans-serif;background:linear-gradient(160deg,var(--bg1) 0%,var(--bg2) 100%);color:var(--text);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(72px + var(--sb));overflow-x:hidden;min-height:100vh}
 button{font-family:inherit;border:none;cursor:pointer;background:none;color:inherit}
 input,textarea,select{font-family:inherit;font-size:inherit;border:none;outline:none;background:none;color:inherit}
 textarea{resize:none;line-height:1.55}
-
-/* === 顶部页头 === */
-.head{
-  position:sticky;top:0;z-index:20;
-  padding:calc(var(--st) + 12px) 16px 10px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:var(--bg);
-}
+.head{position:sticky;top:0;z-index:20;padding:calc(var(--st) + 12px) 16px 8px;background:transparent}
 .head h1{font-size:21px;font-weight:700;letter-spacing:-.3px}
 .head .sub{font-size:12px;color:var(--t3);font-weight:500;margin-top:1px}
 .wrap{padding:4px 14px 26px}
-
-/* === 卡片 === */
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:12px}
 .card-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.card-h .t{display:flex;align-items:center;gap:8px;font-weight:700;font-size:16px}
+.card-h .t{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
 .card-h .t .bar{width:4px;height:15px;border-radius:2px}
 .card-h .more{font-size:12px;color:var(--t3);font-weight:500}
-
-/* === 渐变重点卡片 === */
-.hero{
-  border-radius:var(--radius);padding:20px 18px;color:#fff;
-  margin-bottom:12px;position:relative;overflow:hidden;
-  background:linear-gradient(125deg,#5b8def 0%,#7c6cf0 100%);
-  box-shadow:0 6px 20px rgba(91,141,239,.28);
-}
-.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.09)}
-.hero::before{content:"";position:absolute;right:30px;bottom:-50px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.06)}
-.hero .hi{font-size:13px;opacity:.9;margin-bottom:5px;position:relative;z-index:1}
-.hero .focus{font-size:17px;font-weight:600;line-height:1.45;position:relative;z-index:1}
+.hero{border-radius:var(--radius);padding:20px 18px;color:#5a544c;margin-bottom:12px;position:relative;overflow:hidden;background:linear-gradient(135deg,#d8d3c8 0%,#c8c0b2 100%);box-shadow:0 3px 12px rgba(80,70,60,.08)}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.12)}
+.hero .hi{font-size:13px;opacity:.78;margin-bottom:5px;position:relative;z-index:1}
+.hero .focus{font-size:17px;font-weight:600;line-height:1.45;position:relative;z-index:1;color:#3a3530}
 .hero .stats{display:flex;gap:22px;margin-top:16px;position:relative;z-index:1}
-.hero .stats .n{font-size:24px;font-weight:700;line-height:1}
-.hero .stats .l{font-size:11px;opacity:.85;margin-top:3px}
-
-/* === 提醒项 === */
+.hero .stats .n{font-size:24px;font-weight:700;line-height:1;color:#3a3530}
+.hero .stats .l{font-size:11px;opacity:.7;margin-top:3px;color:#5a544c}
 .remind-item{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
 .remind-item:last-child{border-bottom:none}
 .remind-item .pin{width:18px;height:18px;border-radius:5px;background:var(--c-red-s);color:var(--c-red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
 .remind-item .ri-txt{flex:1;font-size:14px;line-height:1.5}
 .remind-item .ri-del{font-size:11px;color:var(--t3);padding:2px 4px}
-
-/* === 筛选标签 === */
 .filter{display:flex;gap:7px;overflow-x:auto;padding:0 0 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .filter::-webkit-scrollbar{display:none}
 .chip{flex-shrink:0;padding:6px 14px;border-radius:18px;background:var(--card);font-size:12.5px;color:var(--t2);font-weight:500;border:1px solid var(--line);white-space:nowrap;transition:.15s}
 .chip.on{color:#fff;border-color:transparent}
-
-/* === 待办项 === */
 .todo{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid var(--line)}
 .todo:last-child{border-bottom:none}
-.cb{width:21px;height:21px;border-radius:50%;border:1.8px solid #d3d8e8;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.cb{width:21px;height:21px;border-radius:50%;border:1.8px solid #c8c0b4;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.2s}
 .cb.on{background:var(--c-today);border-color:var(--c-today)}
 .cb.on svg{display:block}
 .cb svg{display:none;width:11px;height:7px}
@@ -107,20 +66,16 @@ textarea{resize:none;line-height:1.55}
 .tag-study{background:var(--c-study-s);color:var(--c-study)}
 .tag-teach{background:var(--c-teach-s);color:var(--c-teach)}
 .tag-baby{background:var(--c-baby-s);color:var(--c-baby)}
-.tag-life{background:#eef1f8;color:var(--t2)}
-.todo-main .meta .del{font-size:11px;color:var(--t3);padding:2px 4px;margin-left:auto}
-
-/* === 打卡日历 === */
+.tag-life{background:#ebe6df;color:var(--t2)}
+.todo .del{font-size:11px;color:var(--t3);padding:6px 4px;align-self:center}
 .cal-row{display:flex;gap:6px;margin-top:10px}
-.cal-cell{flex:1;aspect-ratio:1;border-radius:10px;background:var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:var(--t3);position:relative}
+.cal-cell{flex:1;aspect-ratio:1;border-radius:10px;background:var(--card-2);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:var(--t3);position:relative}
 .cal-cell .d{font-size:13px;font-weight:600;color:var(--t2)}
 .cal-cell.done{background:var(--c-study);color:#fff}
 .cal-cell.done .d{color:#fff}
 .cal-cell.today{box-shadow:0 0 0 2px var(--c-study),0 0 0 4px var(--c-study-s)}
 .prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:4px}
 .prog .bar{height:100%;border-radius:3px;transition:.4s}
-
-/* === 列表项 === */
 .li{padding:13px 0;border-bottom:1px solid var(--line)}
 .li:last-child{border-bottom:none}
 .li .lt{font-size:14px;font-weight:600;margin-bottom:3px}
@@ -128,675 +83,137 @@ textarea{resize:none;line-height:1.55}
 .li .lm{display:flex;gap:8px;margin-top:6px;align-items:center;flex-wrap:wrap}
 .li .lm .time{font-size:11px;color:var(--t3)}
 .li .lm .del{font-size:11px;color:var(--t3);padding:2px 4px;margin-left:auto}
-
-/* === 四宫格入口 === */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .entry{background:var(--card);border-radius:15px;padding:15px;box-shadow:var(--shadow);position:relative}
 .entry .ic{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
 .entry .ic svg{width:20px;height:20px}
 .entry .et{font-size:14px;font-weight:700;margin-bottom:2px}
 .entry .ed{font-size:11.5px;color:var(--t3)}
-
-/* === 宝宝档案 === */
 .baby-card{display:flex;align-items:center;gap:14px;margin-bottom:12px}
 .baby-avatar{width:54px;height:54px;border-radius:50%;background:var(--c-baby-s);display:flex;align-items:center;justify-content:center}
 .baby-avatar svg{width:30px;height:30px}
 .baby-info .bn{font-size:16px;font-weight:700}
 .baby-info .bm{font-size:12.5px;color:var(--t2);margin-top:2px}
-
-/* === 里程碑 === */
-.ms-cat{font-size:12px;font-weight:700;margin:12px 0 6px;color:var(--c-baby)}
-.ms-item{display:flex;gap:9px;padding:7px 0;font-size:13.5px;align-items:flex-start}
-.ms-item .dt{width:6px;height:6px;border-radius:50%;background:var(--c-baby);margin-top:7px;flex-shrink:0}
-
-/* === 复查状态 === */
+.vac-item{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid var(--line)}
+.vac-item:last-child{border-bottom:none}
+.vac-dot{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0;background:var(--t3)}
+.vac-dot.done{background:var(--c-teach)}
+.vac-dot.overdue{background:var(--c-red);box-shadow:0 0 0 3px var(--c-red-s)}
+.vac-main{flex:1}
+.vac-main .vt{font-size:14px;font-weight:600}
+.vac-main .vm{font-size:12px;color:var(--t2);margin-top:2px}
+.vac-main .vact{display:flex;gap:6px;margin-top:4px;align-items:center;flex-wrap:wrap}
+.vac-main .vact .del{font-size:11px;color:var(--t3);padding:2px 4px}
 .status-pill{font-size:10.5px;padding:2px 8px;border-radius:5px;font-weight:600}
-.st-doing{background:var(--c-red-s);color:var(--c-red)}
 .st-done{background:var(--c-teach-s);color:var(--c-teach)}
-
-/* === 浮动+按钮 === */
-.fab{
-  position:fixed;right:16px;bottom:calc(82px + var(--sb));
-  width:52px;height:52px;border-radius:50%;
-  background:var(--c-today);color:#fff;
-  box-shadow:0 8px 22px rgba(91,141,239,.42);
-  display:flex;align-items:center;justify-content:center;z-index:30;transition:.15s;
-}
+.st-doing{background:#ebe6df;color:var(--t2)}
+.st-overdue{background:var(--c-red-s);color:var(--c-red)}
+.fab{position:fixed;right:16px;bottom:calc(82px + var(--sb));width:52px;height:52px;border-radius:50%;background:var(--c-today);color:#fff;box-shadow:0 4px 14px rgba(80,70,60,.18);display:flex;align-items:center;justify-content:center;z-index:30;transition:.15s}
 .fab svg{width:24px;height:24px}
 .fab:active{transform:scale(.9)}
-
-/* === 底部Tab === */
-.tabbar{
-  position:fixed;left:0;right:0;bottom:0;z-index:40;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-top:1px solid var(--line);
-  display:flex;padding:7px 0 calc(6px + var(--sb));
-}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(244,241,234,.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);display:flex;padding:7px 0 calc(6px + var(--sb))}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--t3);font-size:10px;font-weight:500;padding:4px 0;transition:.15s}
-.tab svg{width:23px;height:23px;stroke-width:2}
+.tab svg{width:23px;height:23px;stroke-width:1.7}
 .tab.on{font-weight:600}
-
-/* === 页面切换 === */
 .page{display:none}
-.page.active{display:block;animation:fade .28s}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* === 弹窗Sheet === */
-.mask{position:fixed;inset:0;background:rgba(20,28,50,.45);z-index:50;display:none;animation:fade2 .2s}
+.page.active{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.mask{position:fixed;inset:0;background:rgba(60,54,48,.32);z-index:50;display:none;animation:fade2 .25s}
 @keyframes fade2{from{opacity:0}to{opacity:1}}
 .mask.show{display:block}
-.sheet{
-  position:fixed;left:0;right:0;bottom:0;z-index:51;
-  background:#fff;border-radius:24px 24px 0 0;
-  padding:8px 18px calc(24px + var(--sb));max-height:90vh;overflow-y:auto;
-  transform:translateY(100%);transition:transform .32s cubic-bezier(.32,.72,.28,1);
-  display:none;
-}
-.sheet.show{display:block;animation:fade2 .2s}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:51;background:var(--card);border-radius:26px 26px 0 0;padding:8px 18px calc(24px + var(--sb));max-height:90vh;overflow-y:auto;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,.72,.28,1);display:none}
+.sheet.show{display:block}
 .sheet.show-in{transform:translateY(0)}
 .grip{width:38px;height:4px;background:var(--line);border-radius:2px;margin:8px auto 12px}
-.sh-t{font-size:17px;font-weight:700;margin-bottom:14px;text-align:center}
-
-/* === 表单 === */
+.sh-t{font-size:17px;font-weight:700;margin-bottom:14px;text-align:center;color:var(--text)}
 .field{margin-bottom:13px}
 .field label{display:block;font-size:12px;color:var(--t2);margin-bottom:6px;font-weight:600}
-.field input,.field textarea,.field select{
-  width:100%;background:var(--bg);border-radius:11px;padding:11px 13px;font-size:14px;
-  border:1.5px solid transparent;transition:.15s;
-}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--c-today);background:#fff}
+.field input,.field textarea,.field select{width:100%;background:var(--card-2);border-radius:11px;padding:11px 13px;font-size:14px;border:1.5px solid transparent;transition:.15s;color:var(--text)}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--c-today);background:var(--card)}
 .field textarea{min-height:84px;line-height:1.55}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
 .btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px;border-radius:13px;font-size:14.5px;font-weight:600;width:100%;transition:.15s}
 .btn:active{transform:scale(.98)}
-.btn-pri{background:var(--c-today);color:#fff;box-shadow:0 4px 14px rgba(91,141,239,.3)}
-.btn-ghost{background:var(--bg);color:var(--t2);margin-top:8px}
-
-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23a8aec4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:30px!important}
-
-/* 空状态 */
+.btn-pri{background:var(--c-today);color:#fff;box-shadow:0 2px 8px rgba(80,70,60,.1)}
+.btn-ghost{background:var(--card-2);color:var(--t2);margin-top:8px}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23a8a096' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:30px!important}
 .empty{text-align:center;padding:30px 0;color:var(--t3)}
-.empty svg{width:40px;height:40px;margin-bottom:8px;opacity:.5}
+.empty svg{width:36px;height:36px;margin-bottom:8px;opacity:.4}
 .empty .et{font-size:13px}
-
-/* 段落标题 */
 .sec{font-size:12px;color:var(--t3);font-weight:700;margin:18px 4px 8px;letter-spacing:.4px}
-
-/* 数据胶囊 */
-.pill{display:inline-flex;align-items:center;gap:5px;background:var(--bg);padding:4px 10px;border-radius:20px;font-size:11.5px;color:var(--t2);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:5px;background:var(--card-2);padding:4px 10px;border-radius:20px;font-size:11.5px;color:var(--t2);font-weight:600}
 .pill b{color:var(--text)}
-
-/* 链接提示 */
-.tip-card{background:var(--c-today-s);border-radius:12px;padding:11px 13px;font-size:12.5px;color:var(--c-today);line-height:1.5;margin-top:8px;display:flex;gap:8px;align-items:flex-start}
-.tip-card svg{width:15px;height:15px;flex-shrink:0;margin-top:1px}
+.backup-tip{font-size:12px;color:var(--t2);line-height:1.55;margin-bottom:10px;background:var(--card-2);padding:10px;border-radius:10px}
 </style>
 </head>
 <body>
-
-<!-- ============ 页面1：今日总看板 ============ -->
 <div class="page active" id="p-today">
-  <div class="head"><div><h1>今日总看板</h1><div class="sub" id="today-sub"></div></div></div>
-  <div class="wrap">
-
-    <div class="hero">
-      <div class="hi" id="greet">早上好</div>
-      <div class="focus" id="focus">今天还有 0 件事待完成</div>
-      <div class="stats">
-        <div><div class="n" id="s-pend">0</div><div class="l">待办</div></div>
-        <div><div class="n" id="s-done">0</div><div class="l">已完成</div></div>
-        <div><div class="n" id="s-rate">0%</div><div class="l">完成率</div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-h"><div class="t"><span class="bar" style="background:var(--c-red)"></span>重点提醒</div>
-        <button class="more" onclick="openSheet('remind')">+ 添加</button></div>
-      <div id="remind-list"></div>
-    </div>
-
-    <div class="card">
-      <div class="card-h"><div class="t"><span class="bar" style="background:var(--c-today)"></span>全部待办</div>
-        <span class="pill"><b id="todo-cnt">0</b> 项</span></div>
-      <div class="filter" id="todo-filter">
-        <button class="chip on" data-f="all" style="background:var(--text)">全部</button>
-        <button class="chip" data-f="study">读研</button>
-        <button class="chip" data-f="teach">备课</button>
-        <button class="chip" data-f="baby">育儿</button>
-        <button class="chip" data-f="life">家庭</button>
-      </div>
-      <div id="todo-list"></div>
-    </div>
-
-    <button class="btn btn-pri" style="margin-top:4px" onclick="openSheet('todo')">+ 新增待办</button>
-  </div>
-  <div class="fab" onclick="openSheet('todo')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+<div class="head"><div><h1>今日总看板</h1><div class="sub" id="today-sub"></div></div></div>
+<div class="wrap">
+<div class="hero"><div class="hi" id="greet">早上好</div><div class="focus" id="focus">今天还有 0 件事待完成</div><div class="stats"><div><div class="n" id="s-pend">0</div><div class="l">待办</div></div><div><div class="n" id="s-done">0</div><div class="l">已完成</div></div><div><div class="n" id="s-rate">0%</div><div class="l">完成率</div></div></div></div>
+<div class="card"><div class="card-h"><div class="t"><span class="bar" style="background:var(--c-red)"></span>重点提醒</div><button class="more" onclick="openSheet('remind')">+ 添加</button></div><div id="remind-list"></div></div>
+<div class="card"><div class="card-h"><div class="t"><span class="bar" style="background:var(--c-today)"></span>全部待办</div><span class="pill"><b id="todo-cnt">0</b> 项</span></div><div class="filter" id="todo-filter"><button class="chip on" data-f="all" style="background:var(--text)">全部</button><button class="chip" data-f="study">读研</button><button class="chip" data-f="teach">备课</button><button class="chip" data-f="baby">育儿</button><button class="chip" data-f="life">家庭</button></div><div id="todo-list"></div></div>
+<button class="btn btn-pri" style="margin-top:4px" onclick="openSheet('todo')">+ 新增待办</button>
+<div class="card" style="margin-top:14px"><div class="card-h"><div class="t"><span class="bar" style="background:var(--t3)"></span>数据备份</div></div><div class="backup-tip">链接变了/换手机/清缓存都不怕：导出备份文件存到手机，下次用新链接时导入即可恢复全部数据。</div><div class="row2"><button class="btn btn-ghost" style="margin:0" onclick="exportData()">导出备份</button><button class="btn btn-ghost" style="margin:0" onclick="document.getElementById('import-file').click()">导入恢复</button></div><input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)"></div>
 </div>
-
-<!-- ============ 页面2：读研论文 ============ -->
+<div class="fab" onclick="openSheet('todo')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+</div>
 <div class="page" id="p-study">
-  <div class="head"><div><h1>读研论文</h1><div class="sub">道法 · 家国情怀方向</div></div></div>
-  <div class="wrap">
-
-    <div class="card">
-      <div class="card-h"><div class="t"><span class="bar" style="background:var(--c-study)"></span>本周写作打卡</div>
-        <span class="pill">连续 <b id="study-streak">0</b> 天</span></div>
-      <div style="font-size:12px;color:var(--t2);margin-bottom:4px">本周进度 <b id="study-prog-txt" style="color:var(--c-study)">0/7</b></div>
-      <div class="prog"><div class="bar" id="study-bar" style="width:0%;background:var(--c-study)"></div></div>
-      <div class="cal-row" id="study-cal"></div>
-      <button class="btn btn-pri" id="study-checkin" style="margin-top:14px;background:var(--c-study);box-shadow:0 4px 14px rgba(124,108,240,.3)">今日写作打卡</button>
-    </div>
-
-    <div class="sec">文献摘要库</div>
-    <div class="card">
-      <div id="lit-list"></div>
-      <button class="btn btn-ghost" onclick="openSheet('lit')">+ 录入文献</button>
-    </div>
-
-    <div class="sec">论文素材库</div>
-    <div class="card">
-      <div id="mat-list"></div>
-      <button class="btn btn-ghost" onclick="openSheet('mat')">+ 添加素材</button>
-    </div>
-
-    <div class="sec">导师沟通台账</div>
-    <div class="card">
-      <div id="mentor-list"></div>
-      <button class="btn btn-ghost" onclick="openSheet('mentor')">+ 记录沟通</button>
-    </div>
-
-  </div>
-  <div class="fab" onclick="openSheet('lit')" style="background:var(--c-study)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+<div class="head"><div><h1>读研论文</h1><div class="sub">道法 · 家国情怀方向</div></div></div>
+<div class="wrap">
+<div class="card"><div class="card-h"><div class="t"><span class="bar" style="background:var(--c-study)"></span>本周写作打卡</div><span class="pill">连续 <b id="study-streak">0</b> 天</span></div><div style="font-size:12px;color:var(--t2);margin-bottom:4px">本周进度 <b id="study-prog-txt" style="color:var(--c-study)">0/7</b></div><div class="prog"><div class="bar" id="study-bar" style="width:0%;background:var(--c-study)"></div></div><div class="cal-row" id="study-cal"></div><button class="btn btn-pri" id="study-checkin" style="margin-top:14px;background:var(--c-study)">今日写作打卡</button></div>
+<div class="sec">文献摘要库</div>
+<div class="card"><div id="lit-list"></div><button class="btn btn-ghost" onclick="openSheet('lit')">+ 录入文献</button></div>
+<div class="sec">论文素材库</div>
+<div class="card"><div id="mat-list"></div><button class="btn btn-ghost" onclick="openSheet('mat')">+ 添加素材</button></div>
+<div class="sec">导师沟通台账</div>
+<div class="card"><div id="mentor-list"></div><button class="btn btn-ghost" onclick="openSheet('mentor')">+ 记录沟通</button></div>
 </div>
-
-<!-- ============ 页面3：道法备课 ============ -->
+<div class="fab" onclick="openSheet('lit')" style="background:var(--c-study)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+</div>
 <div class="page" id="p-teach">
-  <div class="head"><div><h1>道法备课</h1><div class="sub">教学台账 · 分类收纳</div></div></div>
-  <div class="wrap">
-
-    <div class="grid2">
-      <div class="entry" onclick="goTeachTab('lesson')">
-        <div class="ic" style="background:var(--c-teach-s);color:var(--c-teach)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div class="et">教案台账</div><div class="ed" id="cnt-lesson">0 篇</div>
-      </div>
-      <div class="entry" onclick="goTeachTab('activity')">
-        <div class="ic" style="background:var(--c-baby-s);color:var(--c-baby)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <div class="et">课堂活动</div><div class="ed" id="cnt-activity">0 个</div>
-      </div>
-      <div class="entry" onclick="goTeachTab('quiz')">
-        <div class="ic" style="background:var(--c-today-s);color:var(--c-today)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <div class="et">出题素材</div><div class="ed" id="cnt-quiz">0 条</div>
-      </div>
-      <div class="entry" onclick="goTeachTab('reflect')">
-        <div class="ic" style="background:var(--c-study-s);color:var(--c-study)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="et">教学反思</div><div class="ed" id="cnt-reflect">0 篇</div>
-      </div>
-    </div>
-
-    <div class="filter" id="teach-filter" style="margin-top:14px">
-      <button class="chip on" data-t="lesson" style="background:var(--c-teach);border-color:transparent;color:#fff">教案</button>
-      <button class="chip" data-t="activity">课堂活动</button>
-      <button class="chip" data-t="quiz">出题素材</button>
-      <button class="chip" data-t="reflect">教学反思</button>
-    </div>
-
-    <div class="card" id="teach-panel"></div>
-
-  </div>
-  <div class="fab" onclick="openSheet(curTeachTab)" style="background:var(--c-teach)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+<div class="head"><div><h1>道法备课</h1><div class="sub">教学台账 · 分类收纳</div></div></div>
+<div class="wrap">
+<div class="grid2">
+<div class="entry" onclick="goTeachTab('lesson')"><div class="ic" style="background:var(--c-teach-s);color:var(--c-teach)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="et">教案台账</div><div class="ed" id="cnt-lesson">0 篇</div></div>
+<div class="entry" onclick="goTeachTab('activity')"><div class="ic" style="background:var(--c-baby-s);color:var(--c-baby)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div class="et">课堂活动</div><div class="ed" id="cnt-activity">0 个</div></div>
+<div class="entry" onclick="goTeachTab('quiz')"><div class="ic" style="background:var(--c-today-s);color:var(--c-today)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="et">出题素材</div><div class="ed" id="cnt-quiz">0 条</div></div>
+<div class="entry" onclick="goTeachTab('reflect')"><div class="ic" style="background:var(--c-study-s);color:var(--c-study)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="et">教学反思</div><div class="ed" id="cnt-reflect">0 篇</div></div>
 </div>
-
-<!-- ============ 页面4：育儿家庭 ============ -->
+<div class="filter" id="teach-filter" style="margin-top:14px"><button class="chip on" data-t="lesson" style="background:var(--c-teach);border-color:transparent;color:#fff">教案</button><button class="chip" data-t="activity">课堂活动</button><button class="chip" data-t="quiz">出题素材</button><button class="chip" data-t="reflect">教学反思</button></div>
+<div class="card" id="teach-panel"></div>
+</div>
+<div class="fab" onclick="openSheet(curTeachTab)" style="background:var(--c-teach)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+</div>
 <div class="page" id="p-baby">
-  <div class="head"><div><h1>育儿家庭</h1><div class="sub" id="baby-sub">宝宝月龄档案</div></div></div>
-  <div class="wrap">
-
-    <div class="card">
-      <div class="card-h"><div class="t"><span class="bar" style="background:var(--c-baby)"></span>宝宝档案</div>
-        <button class="more" onclick="openSheet('baby')">编辑</button></div>
-      <div class="baby-card">
-        <div class="baby-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--c-baby)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
-        <div class="baby-info"><div class="bn" id="baby-name">宝宝</div><div class="bm" id="baby-month">请设置出生日期</div></div>
-      </div>
-      <div id="baby-prog-wrap" style="display:none">
-        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--t2);margin-bottom:5px"><span id="baby-prog-l">向 N 月龄</span><span id="baby-prog-p">0%</span></div>
-        <div class="prog"><div class="bar" id="baby-bar" style="width:0%;background:var(--c-baby)"></div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-h"><div class="t"><span class="bar" style="background:var(--c-baby)"></span>本月发育里程碑</div>
-        <span class="pill" id="ms-age">-月龄</span></div>
-      <div id="ms-list"></div>
-    </div>
-
-    <div class="card">
-      <div class="card-h"><div class="t"><span class="bar" style="background:var(--c-red)"></span>体检复查台账</div>
-        <button class="more" onclick="openSheet('checkup')">+ 添加</button></div>
-      <div id="checkup-list"></div>
-    </div>
-
-    <div class="sec">家庭分工待办</div>
-    <div class="card">
-      <div id="family-list"></div>
-      <button class="btn btn-ghost" onclick="openSheet('family')">+ 添加家庭待办</button>
-    </div>
-
-  </div>
-  <div class="fab" onclick="openSheet('family')" style="background:var(--c-baby)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+<div class="head"><div><h1>育儿家庭</h1><div class="sub" id="baby-sub">宝宝月龄档案</div></div></div>
+<div class="wrap">
+<div class="card"><div class="card-h"><div class="t"><span class="bar" style="background:var(--c-baby)"></span>宝宝档案</div><button class="more" onclick="openSheet('baby')">编辑</button></div><div class="baby-card"><div class="baby-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--c-baby)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div><div class="baby-info"><div class="bn" id="baby-name">宝宝</div><div class="bm" id="baby-month">请设置出生日期</div></div></div><div id="baby-prog-wrap" style="display:none"><div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--t2);margin-bottom:5px"><span id="baby-prog-l">向 N 月龄</span><span id="baby-prog-p">0%</span></div><div class="prog"><div class="bar" id="baby-bar" style="width:0%;background:var(--c-baby)"></div></div></div></div>
+<div class="card"><div class="card-h"><div class="t"><span class="bar" style="background:var(--c-red)"></span>本月疫苗提醒</div><span class="pill" id="vac-stat">-</span></div><div style="font-size:12px;color:var(--t2);margin-bottom:10px;line-height:1.5">根据国家免疫规划，匹配宝宝当前月龄需接种的疫苗。可手动标记已接种。</div><div id="vac-list"></div></div>
+<div class="card"><div class="card-h"><div class="t"><span class="bar" style="background:var(--c-red)"></span>体检复查台账</div><button class="more" onclick="openSheet('checkup')">+ 添加</button></div><div id="checkup-list"></div></div>
+<div class="sec">家庭分工待办</div>
+<div class="card"><div id="family-list"></div><button class="btn btn-ghost" onclick="openSheet('family')">+ 添加家庭待办</button></div>
 </div>
-
-<!-- ============ 底部Tab ============ -->
+<div class="fab" onclick="openSheet('family')" style="background:var(--c-baby)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+</div>
 <nav class="tabbar">
-  <button class="tab on" data-p="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>看板</button>
-  <button class="tab" data-p="study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>论文</button>
-  <button class="tab" data-p="teach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>备课</button>
-  <button class="tab" data-p="baby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg>育儿</button>
+<button class="tab on" data-p="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>看板</button>
+<button class="tab" data-p="study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>论文</button>
+<button class="tab" data-p="teach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>备课</button>
+<button class="tab" data-p="baby"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg>育儿</button>
 </nav>
-
-<!-- ============ 弹窗 ============ -->
 <div class="mask" id="mask" onclick="closeSheet()"></div>
 <div class="sheet" id="sheet"><div class="grip"></div><div id="sheet-body"></div></div>
-
 <script>
-/* ========== 数据层 ========== */
-const K='ai_desk_v2';
-let DB=load();
+const K='ai_desk_morandi_v3';let DB=load();
 function load(){try{return JSON.parse(localStorage.getItem(K))||{}}catch(e){return{}}}
 function save(){localStorage.setItem(K,JSON.stringify(DB))}
-const get=(k,d)=>DB[k]??d;
-const set=(k,v)=>{DB[k]=v;save()};
-
-// 首次初始化示例数据
-if(!DB._init){
-  DB._init=1;
-  DB.todos=[
-    {id:1,cat:'study',txt:'精读《家国情怀在初中道法教学中的渗透》',done:false},
-    {id:2,cat:'study',txt:'论文第二章"教学策略"初稿',done:false},
-    {id:3,cat:'study',txt:'整理导师上周修改意见',done:true},
-    {id:4,cat:'teach',txt:'八上《服务社会》教案定稿',done:true},
-    {id:5,cat:'teach',txt:'整理期中复习题素材',done:false},
-    {id:6,cat:'baby',txt:'带宝宝做18月龄发育筛查',done:false},
-    {id:7,cat:'baby',txt:'取儿保体检报告',done:false},
-    {id:8,cat:'life',txt:'买宝宝辅食米粉',done:true},
-    {id:9,cat:'life',txt:'周末全家去公园',done:false},
-  ];
-  DB.reminds=[
-    '上午10点导师面谈，带论文框架稿',
-    '宝宝18月龄体检本月底前完成',
-    '本周写作打卡还差2天',
-  ];
-  DB.lits=[
-    {id:1,title:'家国情怀融入初中道德与法治课的策略研究',authors:'张敏',year:2023,abstract:'通过情境教学与案例解析，将家国情怀细化为"文化认同—社会责任—国家自信"三层结构，在课堂实现情感价值落地。',tag:'核心文献'},
-    {id:2,title:'初中道法课堂家国情怀培育路径探究',authors:'李华、王刚',year:2022,abstract:'提出"知情意行"四阶模型，强调从认知到行动转化，结合时政热点设计主题活动。',tag:'理论框架'},
-  ];
-  DB.mats=[
-    {id:1,txt:'《义务教育道德与法治课程标准（2022年版）》将"家国情怀"列为核心素养之一，要求培养有理想、有本领、有担当的时代新人。',src:'课标'},
-    {id:2,txt:'"天下兴亡，匹夫有责"——顾炎武。可用于家国情怀导入，结合当代青年责任延伸。',src:'名言素材'},
-    {id:3,txt:'抗疫志愿者案例：社区下沉干部、90后快递员、青年医护，体现平凡岗位的家国担当。',src:'教学案例'},
-  ];
-  DB.mentors=[
-    {id:1,date:'2026-08-05',content:'导师建议第二章聚焦"教学策略"而非泛谈意义，需增加两个典型课例支撑论点，参考文献补近三年核心期刊。',todo:'补两篇2024年CSSCI论文'},
-  ];
-  DB.studyCheck=['2026-08-01','2026-08-02','2026-08-03','2026-08-05','2026-08-06'];
-  DB.lessons=[
-    {id:1,grade:'八年级上册',title:'《服务社会》',obj:'理解服务社会意义，培育奉献担当的家国情怀',steps:'1.情境导入：身边的志愿者\n2.案例探究：抗疫中的平凡英雄\n3.小组讨论：我能为社区做什么\n4.行动延伸：制定服务计划\n5.课堂小结：金句升华',date:'2026-08-04'},
-  ];
-  DB.activities=[
-    {id:1,name:'家国情怀主题分享会',desc:'学生分组收集家乡发展故事，3分钟微演讲，培养文化认同与社会责任感。',dur:'20分钟',grade:'七八年级'},
-  ];
-  DB.quizzes=[
-    {id:1,q:'结合所学，说说青少年如何在日常生活中践行家国情怀？',type:'材料分析',level:'中'},
-    {id:2,q:'"天下兴亡，匹夫有责"对当代中学生的启示是？',type:'简答',level:'易'},
-  ];
-  DB.reflects=[
-    {id:1,date:'2026-08-04',content:'《服务社会》一课抗疫志愿者案例效果好，学生参与度高。但小组讨论时间偏短，下次预留15分钟，并加入"我的服务承诺"卡片环节强化行动转化。'},
-  ];
-  DB.baby={name:'小满',birth:'2025-02-07'};
-  DB.checkups=[
-    {id:1,item:'18月龄儿童保健体检',date:'2026-08-15',done:false,note:'常规体检+语言发育评估'},
-    {id:2,item:'牙齿涂氟',date:'2026-08-20',done:false,note:'口腔科'},
-    {id:3,item:'疫苗接种（百白破加强）',date:'2026-07-28',done:true,note:'社区医院'},
-  ];
-  DB.family=[
-    {id:1,txt:'周末带宝宝去公园',done:false,who:'全家'},
-    {id:2,txt:'整理宝宝旧衣服',done:true,who:'妈妈'},
-    {id:3,txt:'采购本月辅食',done:false,who:'爸爸'},
-  ];
-  save();
-}
-
-/* ========== 工具 ========== */
-const $=s=>document.querySelector(s);
-const $$=s=>document.querySelectorAll(s);
-const T=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
-const uid=()=>Date.now()+Math.floor(Math.random()*999);
-const esc=s=>(s??'').replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
-const daysAgo=n=>{const d=new Date();d.setDate(d.getDate()-n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
-const CN={study:'读研',teach:'备课',baby:'育儿',life:'家庭'};
-const CT={study:'tag-study',teach:'tag-teach',baby:'tag-baby',life:'tag-life'};
-
-/* ========== Tab切换 ========== */
-$$('.tab').forEach(t=>t.onclick=()=>{
-  $$('.tab').forEach(x=>{x.classList.remove('on');x.querySelector('svg').style.color=''});
-  t.classList.add('on');
-  const p=t.dataset.p;
-  const c={today:'var(--c-today)',study:'var(--c-study)',teach:'var(--c-teach)',baby:'var(--c-baby)'}[p];
-  t.querySelector('svg').style.color=c;
-  $$('.page').forEach(pg=>pg.classList.remove('active'));
-  $('#p-'+p).classList.add('active');
-  window.scrollTo(0,0);
-  render();
-});
-// 默认看板tab上色
-$('.tab.on svg').style.color='var(--c-today)';
-
-/* ========== 页面1：今日总看板 ========== */
-let todoFilter='all';
-$$('#todo-filter .chip').forEach(c=>c.onclick=()=>{
-  $$('#todo-filter .chip').forEach(x=>{x.classList.remove('on');x.style.background='';x.style.borderColor='';x.style.color=''});
-  c.classList.add('on');
-  const f=c.dataset.f;
-  const color={all:'var(--text)',study:'var(--c-study)',teach:'var(--c-teach)',baby:'var(--c-baby)',life:'var(--t2)'}[f];
-  c.style.background=color;c.style.borderColor='transparent';c.style.color='#fff';
-  todoFilter=f;renderTodos();
-});
-
-function renderToday(){
-  const d=new Date();
-  const wk=['日','一','二','三','四','五','六'][d.getDay()];
-  $('#today-sub').textContent=`${d.getMonth()+1}月${d.getDate()}日 · 周${wk}`;
-  const h=d.getHours();
-  $('#greet').textContent=h<6?'夜深了，注意休息':h<11?'早上好，元气满满':h<14?'中午好，记得午休':h<18?'下午好，继续加油':h<23?'晚上好，今天辛苦了':'夜深了，注意休息';
-  const ts=get('todos',[]);
-  const done=ts.filter(t=>t.done).length;
-  const pend=ts.length-done;
-  const rate=ts.length?Math.round(done/ts.length*100):0;
-  $('#s-pend').textContent=pend;
-  $('#s-done').textContent=done;
-  $('#s-rate').textContent=rate+'%';
-  $('#focus').textContent=pend?`今天还有 ${pend} 件事待完成，${rate}% 已搞定`:'今日待办全部完成，太棒了';
-  $('#todo-cnt').textContent=ts.length;
-
-  const rs=get('reminds',[]);
-  $('#remind-list').innerHTML=rs.length?rs.map((r,i)=>`<div class="remind-item">
-    <span class="pin">!</span><span class="ri-txt">${esc(r)}</span>
-    <button class="ri-del" onclick="delRemind(${i})">删除</button>
-  </div>`).join(''):'<div class="empty"><div class="et">暂无重点提醒</div></div>';
-
-  renderTodos();
-}
-
-function renderTodos(){
-  const ts=get('todos',[]);
-  const list=todoFilter==='all'?ts:ts.filter(t=>t.cat===todoFilter);
-  $('#todo-list').innerHTML=list.length?list.map(t=>`<div class="todo ${t.done?'done':''}">
-    <div class="cb ${t.done?'on':''}" onclick="toggleTodo(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-    <div class="todo-main"><div class="tt">${esc(t.txt)}</div>
-    <div class="meta"><span class="tag ${CT[t.cat]}">${CN[t.cat]}</span></div></div>
-    <button class="del" style="font-size:11px;color:var(--t3);padding:6px 4px;align-self:center" onclick="delTodo(${t.id})">删除</button>
-  </div>`).join(''):'<div class="empty"><div class="et">暂无待办</div></div>';
-}
-function toggleTodo(id){const t=get('todos',[]).find(x=>x.id===id);if(t){t.done=!t.done;save();renderToday();}}
-function delTodo(id){set('todos',get('todos',[]).filter(x=>x.id!==id));renderToday();}
-function delRemind(i){const r=get('reminds',[]);r.splice(i,1);set('reminds',r);renderToday();}
-
-/* ========== 页面2：读研论文 ========== */
-function renderStudy(){
-  const ch=get('studyCheck',[]);
-  $('#study-streak').textContent=streak(ch);
-  const wk=[daysAgo(6),daysAgo(5),daysAgo(4),daysAgo(3),daysAgo(2),daysAgo(1),T()];
-  const wkNames=['一','二','三','四','五','六','日'];
-  const todayIdx=new Date().getDay()===0?6:new Date().getDay()-1;
-  $('#study-cal').innerHTML=wk.map((d,i)=>{
-    const dd=new Date(d);const isDone=ch.includes(d);const isToday=d===T();
-    return `<div class="cal-cell ${isDone?'done':''} ${isToday?'today':''}"><div class="d">${dd.getDate()}</div>周${wkNames[i]}</div>`;
-  }).join('');
-  const doneCnt=wk.filter(d=>ch.includes(d)).length;
-  $('#study-prog-txt').textContent=`${doneCnt}/7`;
-  $('#study-bar').style.width=(doneCnt/7*100)+'%';
-
-  const lits=get('lits',[]);
-  $('#lit-list').innerHTML=lits.length?lits.map(l=>`<div class="li">
-    <div class="lt">${esc(l.title)}</div>
-    <div class="ld" style="font-size:11.5px;color:var(--t3);margin-bottom:4px">${esc(l.authors)} · ${l.year}</div>
-    <div class="ld">${esc(l.abstract)}</div>
-    <div class="lm"><span class="tag tag-study">${esc(l.tag||'文献')}</span><button class="del" onclick="delLit(${l.id})">删除</button></div>
-  </div>`).join(''):'<div class="empty"><div class="et">暂无文献，点击下方录入</div></div>';
-
-  const ms=get('mats',[]);
-  $('#mat-list').innerHTML=ms.length?ms.map(m=>`<div class="li">
-    <div class="ld">${esc(m.txt)}</div>
-    <div class="lm"><span class="tag tag-study">${esc(m.src)}</span><button class="del" onclick="delMat(${m.id})">删除</button></div>
-  </div>`).join(''):'<div class="empty"><div class="et">暂无素材</div></div>';
-
-  const mt=get('mentors',[]);
-  $('#mentor-list').innerHTML=mt.length?mt.map(m=>`<div class="li">
-    <div class="lm"><span class="time">${esc(m.date)}</span></div>
-    <div class="ld">${esc(m.content)}</div>
-    ${m.todo?`<div class="lm"><span class="tag tag-study">待跟进</span><span style="font-size:13px;color:var(--t2)">${esc(m.todo)}</span></div>`:''}
-    <button class="del" onclick="delMentor(${m.id})">删除</button>
-  </div>`).join(''):'<div class="empty"><div class="et">暂无沟通记录</div></div>';
-}
-function streak(ch){if(!ch.length)return 0;let s=0;const d=new Date();while(true){const ds=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;if(ch.includes(ds)){s++;d.setDate(d.getDate()-1)}else break}return s;}
-function delLit(id){set('lits',get('lits',[]).filter(x=>x.id!==id));renderStudy();}
-function delMat(id){set('mats',get('mats',[]).filter(x=>x.id!==id));renderStudy();}
-function delMentor(id){set('mentors',get('mentors',[]).filter(x=>x.id!==id));renderStudy();}
-$('#study-checkin').onclick=()=>{
-  const c=get('studyCheck',[]);const t=T();
-  if(c.includes(t)){c.splice(c.indexOf(t),1)}else{c.push(t)}
-  set('studyCheck',c);renderStudy();
-};
-
-/* ========== 页面3：道法备课 ========== */
-let curTeachTab='lesson';
-function goTeachTab(t){curTeachTab=t;switchTeachFilter();renderTeach();}
-$$('#teach-filter .chip').forEach(c=>c.onclick=()=>{
-  curTeachTab=c.dataset.t;switchTeachFilter();renderTeach();
-});
-function switchTeachFilter(){
-  $$('#teach-filter .chip').forEach(x=>{x.classList.remove('on');x.style.background='';x.style.borderColor='';x.style.color=''});
-  const cur=$(`#teach-filter .chip[data-t="${curTeachTab}"]`);
-  cur.classList.add('on');cur.style.background='var(--c-teach)';cur.style.borderColor='transparent';cur.style.color='#fff';
-}
-function renderTeach(){
-  const L=get('lessons',[]),A=get('activities',[]),Q=get('quizzes',[]),R=get('reflects',[]);
-  $('#cnt-lesson').textContent=L.length+' 篇';
-  $('#cnt-activity').textContent=A.length+' 个';
-  $('#cnt-quiz').textContent=Q.length+' 条';
-  $('#cnt-reflect').textContent=R.length+' 篇';
-  const panel=$('#teach-panel');
-  if(curTeachTab==='lesson'){
-    panel.innerHTML=L.length?L.slice().reverse().map(l=>`<div class="li">
-      <div class="lt"><span class="tag tag-teach">${esc(l.grade)}</span> ${esc(l.title)}</div>
-      <div class="ld" style="margin-top:4px"><b>目标：</b>${esc(l.obj)}</div>
-      <div class="ld"><b>环节：</b>${esc(l.steps)}</div>
-      <div class="lm"><span class="time">${esc(l.date)}</span><button class="del" onclick="delLesson(${l.id})">删除</button></div>
-    </div>`).join(''):'<div class="empty"><div class="et">暂无教案</div></div>';
-  }else if(curTeachTab==='activity'){
-    panel.innerHTML=A.length?A.slice().reverse().map(a=>`<div class="li">
-      <div class="lt">${esc(a.name)}</div>
-      <div class="ld">${esc(a.desc)}</div>
-      <div class="lm"><span class="tag tag-teach">${esc(a.dur)}</span><span class="tag tag-teach">${esc(a.grade)}</span><button class="del" onclick="delAct(${a.id})">删除</button></div>
-    </div>`).join(''):'<div class="empty"><div class="et">暂无课堂活动</div></div>';
-  }else if(curTeachTab==='quiz'){
-    panel.innerHTML=Q.length?Q.slice().reverse().map(q=>`<div class="li">
-      <div class="ld">${esc(q.q)}</div>
-      <div class="lm"><span class="tag tag-teach">${esc(q.type)}</span><span class="tag tag-teach">${esc(q.level)}</span><button class="del" onclick="delQuiz(${q.id})">删除</button></div>
-    </div>`).join(''):'<div class="empty"><div class="et">暂无试题素材</div></div>';
-  }else{
-    panel.innerHTML=R.length?R.slice().reverse().map(r=>`<div class="li">
-      <div class="lm"><span class="time">${esc(r.date)}</span></div>
-      <div class="ld">${esc(r.content)}</div>
-      <button class="del" onclick="delReflect(${r.id})">删除</button>
-    </div>`).join(''):'<div class="empty"><div class="et">暂无教学反思</div></div>';
-  }
-}
-function delLesson(id){set('lessons',get('lessons',[]).filter(x=>x.id!==id));renderTeach();}
-function delAct(id){set('activities',get('activities',[]).filter(x=>x.id!==id));renderTeach();}
-function delQuiz(id){set('quizzes',get('quizzes',[]).filter(x=>x.id!==id));renderTeach();}
-function delReflect(id){set('reflects',get('reflects',[]).filter(x=>x.id!==id));renderTeach();}
-
-/* ========== 页面4：育儿家庭 ========== */
-const MS={
-  18:{大运动:['独立行走稳','扶栏上楼梯'],语言:['说10-20个词','指认身体部位'],自理:['用勺吃饭','表示大小便需求'],认知:['叠3-4块积木','翻书一次一页']},
-  19:{大运动:['会跑能停','扶栏上楼梯'],语言:['说简单短语','理解简单指令'],自理:['用勺进餐','协助穿衣'],认知:['模仿做家务','认识物品用途']},
-  20:{大运动:['能扶栏上下楼','蹲下起立'],语言:['说3-4字短句','理解方位词'],自理:['自己脱袜','洗手'],认知:['理解大小','配对形状']},
-  21:{大运动:['倒退走','踢球'],语言:['说出自己名字','回答简单问题'],自理:['自己吃饭','穿松紧裤'],认知:['认身体5部位','理解一二']},
-  22:{大运动:['双脚跳离地','跑得稳'],语言:['说短句','问"这是什么"'],自理:['洗手擦手','脱简单衣物'],认知:['搭6-7块积木','模仿画竖线']},
-  23:{大运动:['跑停转弯','扶栏上下楼'],语言:['说3-4字句子','说姓名年龄'],自理:['自己穿衣','表示害羞'],认知:['认1-2种颜色','角色扮演']},
-  24:{大运动:['双脚并跳','跑得稳'],语言:['说50+词、两字句','说短儿歌'],自理:['穿鞋洗手','自己吃饭'],认知:['搭7-8块积木','理解"一个两个"']},
-};
-function renderBaby(){
-  const b=get('baby',{name:'',birth:''});
-  if(b.birth){
-    const m=ageMonth(b.birth);
-    const next=Math.ceil(m);
-    const prog=Math.round((m-(next-1))*100);
-    $('#baby-name').textContent=b.name||'宝宝';
-    $('#baby-month').textContent=`出生 ${b.birth} · ${m}月龄`;
-    $('#baby-sub').textContent=`${b.name||'宝宝'} · ${m}月龄`;
-    $('#baby-prog-wrap').style.display='block';
-    $('#baby-prog-l').textContent=`向 ${next} 月龄成长`;
-    $('#baby-prog-p').textContent=prog+'%';
-    $('#baby-bar').style.width=prog+'%';
-    $('#ms-age').textContent=next+'月龄';
-    const ms=MS[next]||MS[24];
-    let html='';
-    for(const cat in ms){
-      html+=`<div class="ms-cat">${cat}</div>`;
-      ms[cat].forEach(it=>{html+=`<div class="ms-item"><span class="dt"></span><span>${esc(it)}</span></div>`});
-    }
-    $('#ms-list').innerHTML=html;
-  }else{
-    $('#baby-name').textContent=b.name||'宝宝';
-    $('#baby-month').textContent='请设置出生日期';
-    $('#baby-prog-wrap').style.display='none';
-    $('#ms-age').textContent='-月龄';
-    $('#ms-list').innerHTML='<div class="empty"><div class="et">填写出生日期后自动匹配发育里程碑</div></div>';
-  }
-  // 复查台账
-  const cu=get('checkups',[]);
-  const todayStr=T();
-  $('#checkup-list').innerHTML=cu.length?cu.slice().reverse().map(c=>{
-    const isOverdue=!c.done&&c.date<todayStr;
-    return `<div class="li">
-      <div class="lt">${esc(c.item)} ${c.done?'<span class="status-pill st-done">已完成</span>':(isOverdue?'<span class="status-pill st-doing">已到期</span>':'<span class="status-pill st-doing">待复查</span>')}</div>
-      ${c.note?`<div class="ld">${esc(c.note)}</div>`:''}
-      <div class="lm"><span class="time">${esc(c.date)}</span>
-        <button class="del" onclick="toggleCheckup(${c.id})" style="color:var(--c-teach)">${c.done?'取消完成':'标记完成'}</button>
-        <button class="del" onclick="delCheckup(${c.id})">删除</button>
-      </div>
-    </div>`;
-  }).join(''):'<div class="empty"><div class="et">暂无复查提醒</div></div>';
-  // 家庭待办
-  const fa=get('family',[]);
-  $('#family-list').innerHTML=fa.length?fa.map(f=>`<div class="todo ${f.done?'done':''}">
-    <div class="cb ${f.done?'on':''}" style="border-color:var(--c-baby)" onclick="toggleFamily(${f.id})"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-    <div class="todo-main"><div class="tt">${esc(f.txt)}</div>
-    <div class="meta"><span class="tag tag-baby">${esc(f.who)}</span></div></div>
-    <button class="del" style="font-size:11px;color:var(--t3);padding:6px 4px;align-self:center" onclick="delFamily(${f.id})">删除</button>
-  </div>`).join(''):'<div class="empty"><div class="et">暂无家庭待办</div></div>';
-}
-function ageMonth(birth){const b=new Date(birth),n=new Date();return Math.round((n-b)/(30.44*864e5)*10)/10;}
-function toggleFamily(id){const f=get('family',[]).find(x=>x.id===id);if(f){f.done=!f.done;save();renderBaby();}}
-function delFamily(id){set('family',get('family',[]).filter(x=>x.id!==id));renderBaby();}
-function toggleCheckup(id){const c=get('checkups',[]).find(x=>x.id===id);if(c){c.done=!c.done;save();renderBaby();}}
-function delCheckup(id){set('checkups',get('checkups',[]).filter(x=>x.id!==id));renderBaby();}
-
-/* ========== 弹窗Sheet ========== */
-function openSheet(type){
-  const F={
-    todo:`<div class="sh-t">新增待办</div>
-      <div class="field"><label>待办内容</label><input id="f-txt" placeholder="如：读完某篇文献"></div>
-      <div class="field"><label>归类</label><select id="f-cat"><option value="study">读研</option><option value="teach">备课</option><option value="baby">育儿</option><option value="life">家庭</option></select></div>
-      <button class="btn btn-pri" onclick="saveTodo()">保存</button>`,
-    remind:`<div class="sh-t">添加重点提醒</div>
-      <div class="field"><label>提醒内容</label><textarea id="f-txt" placeholder="如：上午10点导师面谈"></textarea></div>
-      <button class="btn btn-pri" onclick="saveRemind()">保存</button>`,
-    lit:`<div class="sh-t">录入文献</div>
-      <div class="field"><label>标题</label><input id="f-title" placeholder="文献标题"></div>
-      <div class="row2"><div class="field"><label>作者</label><input id="f-authors" placeholder="作者"></div>
-      <div class="field"><label>年份</label><input id="f-year" type="number" placeholder="2024"></div></div>
-      <div class="field"><label>摘要提炼</label><textarea id="f-abstract" placeholder="核心观点摘要"></textarea></div>
-      <div class="field"><label>标签</label><input id="f-tag" placeholder="如：核心文献/理论框架"></div>
-      <button class="btn btn-pri" onclick="saveLit()">保存</button>`,
-    mat:`<div class="sh-t">添加素材</div>
-      <div class="field"><label>素材内容</label><textarea id="f-txt" placeholder="课标原句/名言/数据/案例"></textarea></div>
-      <div class="field"><label>来源</label><input id="f-src" placeholder="如：课标/某论文"></div>
-      <button class="btn btn-pri" onclick="saveMat()">保存</button>`,
-    mentor:`<div class="sh-t">记录导师沟通</div>
-      <div class="field"><label>沟通日期</label><input id="f-date" type="date" value="${T()}"></div>
-      <div class="field"><label>导师意见</label><textarea id="f-content" placeholder="导师反馈与修改建议"></textarea></div>
-      <div class="field"><label>后续待办</label><input id="f-todo" placeholder="需跟进的事项"></div>
-      <button class="btn btn-pri" onclick="saveMentor()">保存</button>`,
-    lesson:`<div class="sh-t">道法教案</div>
-      <div class="row2"><div class="field"><label>年级册次</label><input id="f-grade" placeholder="八上"></div>
-      <div class="field"><label>课题</label><input id="f-title" placeholder="如：服务社会"></div></div>
-      <div class="field"><label>教学目标</label><textarea id="f-obj" placeholder="素养目标"></textarea></div>
-      <div class="field"><label>教学环节</label><textarea id="f-steps" style="min-height:120px" placeholder="1.导入&#10;2.新授&#10;3.活动&#10;4.总结"></textarea></div>
-      <button class="btn btn-pri" onclick="saveLesson()">保存</button>`,
-    activity:`<div class="sh-t">课堂活动</div>
-      <div class="field"><label>活动名称</label><input id="f-name" placeholder="如：家国情怀分享会"></div>
-      <div class="field"><label>活动说明</label><textarea id="f-desc" placeholder="流程与规则"></textarea></div>
-      <div class="row2"><div class="field"><label>时长</label><input id="f-dur" placeholder="20分钟"></div>
-      <div class="field"><label>适用年级</label><input id="f-grade" placeholder="七八年级"></div></div>
-      <button class="btn btn-pri" onclick="saveActivity()">保存</button>`,
-    quiz:`<div class="sh-t">出题素材</div>
-      <div class="field"><label>题干</label><textarea id="f-q" placeholder="题目内容"></textarea></div>
-      <div class="row2"><div class="field"><label>题型</label><select id="f-type"><option>材料分析</option><option>单项选择</option><option>简答</option><option>辨析</option></select></div>
-      <div class="field"><label>难度</label><select id="f-level"><option>易</option><option selected>中</option><option>难</option></select></div></div>
-      <button class="btn btn-pri" onclick="saveQuiz()">保存</button>`,
-    reflect:`<div class="sh-t">教学反思</div>
-      <div class="field"><label>日期</label><input id="f-date" type="date" value="${T()}"></div>
-      <div class="field"><label>反思内容</label><textarea id="f-content" style="min-height:120px" placeholder="课堂效果、学生反馈、改进方向"></textarea></div>
-      <button class="btn btn-pri" onclick="saveReflect()">保存</button>`,
-    baby:`<div class="sh-t">宝宝信息</div>
-      <div class="field"><label>宝宝昵称</label><input id="f-name" placeholder="如：小满"></div>
-      <div class="field"><label>出生日期</label><input id="f-birth" type="date"></div>
-      <button class="btn btn-pri" onclick="saveBaby()">保存</button>`,
-    checkup:`<div class="sh-t">添加复查</div>
-      <div class="field"><label>复查项目</label><input id="f-item" placeholder="如：18月龄体检"></div>
-      <div class="field"><label>日期</label><input id="f-date" type="date"></div>
-      <div class="field"><label>备注</label><input id="f-note" placeholder="科室/注意事项"></div>
-      <button class="btn btn-pri" onclick="saveCheckup()">保存</button>`,
-    family:`<div class="sh-t">家庭待办</div>
-      <div class="field"><label>事项</label><input id="f-txt" placeholder="待办内容"></div>
-      <div class="field"><label>负责人</label><select id="f-who"><option>妈妈</option><option>爸爸</option><option>全家</option><option>爷爷奶奶</option></select></div>
-      <button class="btn btn-pri" onclick="saveFamily()">保存</button>`,
-  };
-  $('#sheet-body').innerHTML=F[type]||'<div class="empty">未定义</div>';
-  $('#mask').classList.add('show');
-  const s=$('#sheet');s.classList.add('show');
-  requestAnimationFrame(()=>s.classList.add('show-in'));
-  s.dataset.type=type;
-}
-function closeSheet(){
-  const s=$('#sheet');
-  s.classList.remove('show-in');
-  setTimeout(()=>{s.classList.remove('show');$('#mask').classList.remove('show')},280);
-}
-function saveTodo(){const a=get('todos',[]);a.push({id:uid(),cat:$('#f-cat').value,txt:$('#f-txt').value,done:false});set('todos',a);closeSheet();renderToday();}
-function saveRemind(){const a=get('reminds',[]);a.push($('#f-txt').value);set('reminds',a);closeSheet();renderToday();}
-function saveLit(){const a=get('lits',[]);a.push({id:uid(),title:$('#f-title').value,authors:$('#f-authors').value,year:+$('#f-year').value||'',abstract:$('#f-abstract').value,tag:$('#f-tag').value||'文献'});set('lits',a);closeSheet();renderStudy();}
-function saveMat(){const a=get('mats',[]);a.push({id:uid(),txt:$('#f-txt').value,src:$('#f-src').value||'素材'});set('mats',a);closeSheet();renderStudy();}
-function saveMentor(){const a=get('mentors',[]);a.push({id:uid(),date:$('#f-date').value,content:$('#f-content').value,todo:$('#f-todo').value});set('mentors',a);closeSheet();renderStudy();}
-function saveLesson(){const a=get('lessons',[]);a.push({id:uid(),grade:$('#f-grade').value,title:$('#f-title').value,obj:$('#f-obj').value,steps:$('#f-steps').value,date:T()});set('lessons',a);closeSheet();renderTeach();}
-function saveActivity(){const a=get('activities',[]);a.push({id:uid(),name:$('#f-name').value,desc:$('#f-desc').value,dur:$('#f-dur').value,grade:$('#f-grade').value});set('activities',a);closeSheet();renderTeach();}
-function saveQuiz(){const a=get('quizzes',[]);a.push({id:uid(),q:$('#f-q').value,type:$('#f-type').value,level:$('#f-level').value});set('quizzes',a);closeSheet();renderTeach();}
-function saveReflect(){const a=get('reflects',[]);a.push({id:uid(),date:$('#f-date').value,content:$('#f-content').value});set('reflects',a);closeSheet();renderTeach();}
-function saveBaby(){set('baby',{name:$('#f-name').value||'宝宝',birth:$('#f-birth').value});closeSheet();renderBaby();}
-function saveCheckup(){const a=get('checkups',[]);a.push({id:uid(),item:$('#f-item').value,date:$('#f-date').value,done:false,note:$('#f-note').value});set('checkups',a);closeSheet();renderBaby();}
-function saveFamily(){const a=get('family',[]);a.push({id:uid(),txt:$('#f-txt').value,done:false,who:$('#f-who').value||'全家'});set('family',a);closeSheet();renderBaby();}
-
-/* ========== 主渲染 ========== */
-function render(){renderToday();renderStudy();renderTeach();renderBaby();}
-switchTeachFilter();
-render();
-
-// 禁止双击缩放
-let lt=0;document.addEventListener('touchend',e=>{const n=Date.now();if(n-lt<300){e.preventDefault()}lt=n},{passive:false});
-</script>
-</body>
-</html>
+const get=(k,d)=>DB[k]??d;const set=(k,v)=>{DB[k]=v;save()};
+const VACCINES=[{age:0,name:'乙肝疫苗第1剂',desc:'出生24小时内',cat:'乙肝'},{age:1,name:'卡介苗',desc:'出生时接种',cat:'卡介苗'},{age:1,name:'乙肝疫苗第2剂',desc:'1月龄',cat:'乙肝'},{age:2,name:'脊灰疫苗第1剂',desc:'2月龄',cat:'脊灰'},{age:3,name:'脊灰疫苗第2剂',desc:'3月龄',cat:'脊灰'},{age:3,name:'百白破第1剂',desc:'3月龄',cat:'百白破'},{age:4,name:'脊灰疫苗第3剂',desc:'4月龄',cat:'脊灰'},{age:4,name:'百白破第2剂',desc:'4月龄',cat:'百白破'},{age:5,name:'百白破第3剂',desc:'5月龄',cat:'百白破'},{age:6,name:'乙肝疫苗第3剂',desc:'6月龄',cat:'乙肝'},{age:6,name:'A群流脑第1剂',desc:'6月龄',cat:'流脑'},{age:8,name:'麻腮风第1剂',desc:'8月龄',cat:'麻腮风'},{age:9,name:'A群流脑第2剂',desc:'9月龄',cat:'流脑'},{age:18,name:'麻腮风第2剂',desc:'18月龄',cat:'麻腮风'},{age:18,name:'百白破加强',desc:'18月龄',cat:'百白破'},{age:18,name:'甲肝疫苗',desc:'18月龄',cat:'甲肝'},{age:24,name:'乙脑疫苗',desc:'2岁',cat:'乙脑'},{age:24,name:'A+C流脑第1剂',desc:'2岁',cat:'流脑'},{age:36,name:'A+C流脑第2剂',desc:'3岁',cat:'流脑'},{age:48,name:'脊灰加强',desc:'4岁',cat:'脊灰'},{age:72,name:'白破加强',desc:'6岁',cat:'白破'}];
+if(!DB._init){DB._init=1;DB.todos=[{id:1,cat:'study',txt:'精读《家国情怀在初中道法教学中的渗透》',done:false},{id:2,cat:'study',txt:'论文第二章"教学策略"初稿',done:false},{id:3,cat:'study',txt:'整理导师上周修改意见',done:true},{id:4,cat:'teach',txt:'八上《服务社会》教案定稿',done:true},{id:5,cat:'teach',txt:'整理期中复习题素材',done:false},{id:6,cat:'baby',txt:'带宝宝接种麻腮风第2剂',done:false},{id:7,cat:'life',txt:'买宝宝辅食米粉',done:true},{id:8,cat:'life',txt:'周末全家去公园',done:false}];DB.reminds=['上午10点导师面谈，带论文框架稿','宝宝18月龄疫苗本月底前接种','本周写作打卡还差2天'];DB.lits=[{id:1,title:'家国情怀融入初中道德与法治课的策略研究',authors:'张敏',year:2023,abstract:'通过情境教学与案例解析，将家国情怀细化为"文化认同—社会责任—国家自信"三层结构，在课堂实现情感价值落地。',tag:'核心文献'},{id:2,title:'初中道法课堂家国情怀培育路径探究',authors:'李华、王刚',year:2022,abstract:'提出"知情意行"四阶模型，强调从认知到行动转化，结合时政热点设计主题活动。',tag:'理论框架'}];DB.mats=[{id:1,txt:'《义务教育道德与法治课程标准（2022年版）》将"家国情怀"列为核心素养之一，要求培养有理想、有本领、有担当的时代新人。',src:'课标'},{id:2,txt:'"天下兴亡，匹夫有责"——顾炎武。可用于家国情怀导入，结合当代青年责任延伸。',src:'名言素材'},{id:3,txt:'抗疫志愿者案例：社区下沉干部、90后快递员、青年医护，体现平凡岗位的家国担当。',src:'教学案例'}];DB.mentors=[{id:1,date:'2026-08-05',content:'导师建议第二章聚焦"教学策略"而非泛谈意义，需增加两个典型课例支撑论点，参考文献补近三年核心期刊。',todo:'补两篇2024年CSSCI论文'}];DB.studyCheck=['2026-08-01','2026-08-02','2026-08-03','2026-08-05','2026-08-06'];DB.lessons=[{id:1,grade:'八年级上册',title:'《服务社会》',obj:'理解服务社会意义，培育奉献担当的家国情怀',steps:'1.情境导入：身边的志愿者\n2.案例探究：抗疫中的平凡英雄\n3.小组讨论：我能为社区做什么\n4.行动延伸：制定服务计划\n5.课堂小结：金句升华',date:'2026-08-04'}];DB.activities=[{id:1,name:'家国情怀主题分享会',desc:'学生分组收集家乡发展故事，3分钟微演讲，培养文化认同与社会责任感。',dur:'20分钟',grade:'七八年级'}];DB.quizzes=[{id:1,q:'结合所学，说说青少年如何在日常生活中践行家国情怀？',type:'材料分析',level:'中'},{id:2,q:'"天下兴亡，匹夫有责"对当代中学生的启示是？',type:'简答',level:'易'}];DB.reflects=[{id:1,date:'2026-08-04',content:'《服务社会》一课抗疫志愿者案例效果好，学生参与度高。但小组讨论时间偏短，下次预留15分钟，并加入"我的服务承诺"卡片环节强化行动转化。'}];DB.baby={name:'小满',birth:'2025-02-07'};DB.vacDone=[];DB.checkups=[{id:1,item:'18月龄儿童保健体检',date:'2026-08-15',done:false,note:'常规体检+语言发育评估'},{id:2,item:'牙齿涂氟',date:'2026-08-20',done:false,note:'口腔科'},{id:3,item:'百白破加强接种复查',date:'2026-07-28',done:true,note:'社区医院'}];DB.family=[{id:1,txt:'周末带宝宝去公园',done:false,who:'全家'},{id:2,txt:'整理宝宝旧衣服',done:true,who:'妈妈'},{id:3,txt:'采购本月辅食',done:false,who:'爸爸'}];save();}
+const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);const T=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};const uid=()=>Date.now()+Math.floor(Math.random()*999);const esc=s=>(s??'').replace(/[<>&]/g,c=>({'<':'<','>':'>','&':'&'}[c]));const daysAgo=n=>{const d=new Date();d.setDate(d.getDate()-n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};const CN={study:'读研',teach:'备课',baby:'育儿',life:'家庭'};const CT={study:'tag-study',teach:'tag-teach',baby:'tag-baby',life:'tag-life'};
+$$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>{x.classList.remove('on');x.querySelector('svg').style.color=''});t.classList.add('on');const p=t.dataset.p;const c={today:'var(--c-today)',study:'var(--c-study)',teach:'var(--c-teach)',baby:'var(--c-baby)'}[p];t.querySelector('svg').style.color=c;$$('.page').forEach(pg=>pg.classList.remove('active'));$('#p-'+p).classList.add('active');window.scrollTo(0,0);render()});$('.tab.on svg').style.color='var(--c-today)';
+let todoFilter='all';$$('#todo-filter .chip').forEach(c=>c.onclick=()=>{$$('#todo-filter .chip').forEach(x=>{x.classList.remove('on');x.style.background='';x.style.borderColor='';x.style.color=''});c.classList.add('on');const f=c.dataset.f;const color={all:'var(--text)',study:'var(--c-study)',teach:'var(--c-teach)',baby:'var(--c-baby)',life:'var(--t2)'}[f];c.style.background=color;c.style.borderColor='transparent';c.style.color='#fff';todoFilter=f;renderTodos()});
+function renderToday(){const d=new Date();const wk=['日','一','二','三','四','五','六'][d.getDay()];$('#today-sub').textContent=`${d.getMonth()+1}月${d.getDate()}日 · 周${wk}`;const h=d.getHours();$('#greet').textContent=h<6?'夜深了，注意休息':h<11?'早上好，元气满满':h<14?'中午好，记得午休':h<18?'下午好，继续加油':h<23?'晚上好，今天辛苦了':'夜深了，注意休息';const ts=get('todos',[]);const done=ts.filter(t=>t.done).length;const pend=ts.length-done;const rate=ts.length?Math.round(done/ts.length*100):0;$('#s-pend').textContent=pend;$('#s-done').textContent=done;$('#s-rate').textContent=rate+'%';$('#focus').textContent=pend?`今天还有 ${pend} 件事待完成，${rate}% 已搞定`:'今日待办全部完成，太棒了';$('#todo-cnt').textContent=ts.length;const rs=get('reminds',[]);$('#remind-list').innerHTML=rs.length?rs.map((r,i)=>`<div class="remind-item"><span class="pin">!</span><span class="ri-txt">${esc(r)}</span><button class="ri-del" onclick="delRemind(${i})">删除</button></div>`).join(''):'<div class="empty"><div class="et">暂无重点提醒</div></div>';renderTodos()}
+function renderTodos(){const ts=get('todos',[]);const list=todoFilter==='all'?ts:ts.filter(t=>t.cat===todoFilter);$('#todo-list').innerHTML=list.length?list.map(t=>`<div class="todo ${t.done?'done':''}"><div class="cb ${t.done?'on':''}" onclick="toggleTodo(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div><div class="todo-main"><div class="tt">${esc(t.txt)}</div><div class="meta"><span class="tag ${CT[t.cat]}">${CN[t.cat]}</span></div></div><button class="del" onclick="delTodo(${t.id})">删除</button></div>`).join(''):'<div class="empty"><div class="et">暂无待办</div></div>'}
+function toggleTodo(id){const t=get('todos',[]).find(x=>x.id===id);if(t){t.done
